@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/33ef521d04.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .outer-box{
+            border: 2px solid black;
+            width: 420px;
+            height: auto;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .keybord-box{
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            gap: 10px;    
+            border: 2px solid;  
+            padding: 20px;
+        }
+        input{
+            height: 50px;  
+            width: 100%;
+            margin-bottom: 30px;
+            font-size: 25px;
+        }
+        .first-row{
+            display: flex;
+            justify-content: center;
+            /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
+            gap: 8px !important;
+        }
+        .second-row{
+            display: flex;
+            justify-content: center;
+            /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
+            gap: 8px !important;
+        }
+        .third-row{
+            display: flex;
+            justify-content: center;
+            /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr ; */
+            gap: 8px !important;
+        }
+        .fourth-row{
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+        button{
+            padding: 2px;
+            width: 25px;
+            height: 35px;
+            border-radius: 20%;
+        }
+        .backspace, .uppercase,.numbers,.search{
+            width: 42px;
+        }
+        .space-bar{
+            width: 37%;
+        }
+        .numbers,.search{
+            border: none;
+            border-radius: 40%;
+        }
+        .space-bar{
+            border-radius: 8%;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer-box">
+        <input type="text" id="display">
+        <div class="keybord-box" id="keybord-box">
+            <div class="first-row">
+                <button onclick="appendToDisplay('q')">q</button>
+                <button onclick="appendToDisplay('w')">w</button>
+                <button onclick="appendToDisplay('e')">e</button>
+                <button onclick="appendToDisplay('r')">r</button>
+                <button onclick="appendToDisplay('t')">t</button>
+                <button onclick="appendToDisplay('y')">y</button>
+                <button onclick="appendToDisplay('u')">u</button>
+                <button onclick="appendToDisplay('i')">i</button>
+                <button onclick="appendToDisplay('o')">o</button>
+                <button onclick="appendToDisplay('p')">p</button>
+            </div>
+            <div class="second-row">
+                <button onclick="appendToDisplay('a')">a</button>
+                <button onclick="appendToDisplay('s')">s</button>
+                <button onclick="appendToDisplay('d')">d</button>
+                <button onclick="appendToDisplay('f')">f</button>
+                <button onclick="appendToDisplay('g')">g</button>
+                <button onclick="appendToDisplay('h')">h</button>
+                <button onclick="appendToDisplay('j')">j</button>
+                <button onclick="appendToDisplay('k')">k</button>
+                <button onclick="appendToDisplay('l')">l</button>
+            </div>
+            <div class="third-row">
+                <button class="uppercase" onclick="appendToDisplay('upper')"><i class="fa-solid fa-up-long"></i></button>
+                <button onclick="appendToDisplay('z')">z</button>
+                <button onclick="appendToDisplay('x')">x</button>
+                <button onclick="appendToDisplay('c')">c</button>
+                <button onclick="appendToDisplay('v')">v</button>
+                <button onclick="appendToDisplay('b')">b</button>
+                <button onclick="appendToDisplay('n')">n</button>
+                <button onclick="appendToDisplay('m')">m</button>
+                <button class="backspace" onclick="del()"><i class="fa-solid fa-delete-left"></i></button>
+            </div>
+            <div class="fourth-row">
+                <button class="numbers">?123</button>
+                <button onclick="appendToDisplay(',')"><b>,</b></button>
+                <button onclick="emoji()"><i class="fa-solid fa-face-smile"></i></button>
+                <button class="space-bar" onclick="appendToDisplay(' ')">search</button>
+                <button onclick="appendToDisplay('.')"><b>.</b></button>
+                <button class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+
+        var disp = document.getElementById("display")
+        
+        var temp=0
+        function appendToDisplay(value){
+            if(value=="upper"){
+                if(temp==0){
+                    return temp=1
+                }
+                else{
+                    return temp=0
+                }
+            }
+            if(temp==0){
+                disp.value+= value
+            }
+            else{
+                disp.value+= value.toUpperCase()
+            }
+        }
+
+        function del(){
+            equation = disp.value
+            equation=equation.slice(0,equation.length -1)
+            disp.value=equation
+        }
+
+        function emoji(){
+            document.getElementById("keybord-box").innerHTML=`<div class='first-row'>
+    <button onclick="appendToDisplay('&#128512;')">&#128512;</button>
+    <button onclick="appendToDisplay('&#128513;')">&#128513;</button>
+    <button onclick="appendToDisplay('&#128514;')">&#128514;</button>
+    <button onclick="appendToDisplay('&#128515;')">&#128515;</button>
+    <button onclick="appendToDisplay('&#128516;')">&#128516;</button>
+    <button onclick="appendToDisplay('&#128517;')">&#128517;</button>
+    <button onclick="appendToDisplay('&#128518;')">&#128518;</button>
+</div>`;
+        }
+    </script>
+</body>
+</html>

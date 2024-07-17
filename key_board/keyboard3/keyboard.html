@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/33ef521d04.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="keyboard.css">
+</head>
+
+<body>
+    <div class="outer-box">
+        <input type="text" id="display">
+        <div class="keybord-box" id="keybord-box">
+            <div class="first-row">
+                <button class="a" onclick="appendToDisplay('q')">q</button>
+                <button class="a" onclick="appendToDisplay('w')">w</button>
+                <button class="a" onclick="appendToDisplay('e')">e</button>
+                <button class="a" onclick="appendToDisplay('r')">r</button>
+                <button class="a" onclick="appendToDisplay('t')">t</button>
+                <button class="a" onclick="appendToDisplay('y')">y</button>
+                <button class="a" onclick="appendToDisplay('u')">u</button>
+                <button class="a" onclick="appendToDisplay('i')">i</button>
+                <button class="a" onclick="appendToDisplay('o')">o</button>
+                <button class="a" onclick="appendToDisplay('p')">p</button>
+            </div>
+            <div class="first-row">
+                <button class="a" onclick="appendToDisplay('a')">a</button>
+                <button class="a" onclick="appendToDisplay('s')">s</button>
+                <button class="a" onclick="appendToDisplay('d')">d</button>
+                <button class="a" onclick="appendToDisplay('f')">f</button>
+                <button class="a" onclick="appendToDisplay('g')">g</button>
+                <button class="a" onclick="appendToDisplay('h')">h</button>
+                <button class="a" onclick="appendToDisplay('j')">j</button>
+                <button class="a" onclick="appendToDisplay('k')">k</button>
+                <button class="a" onclick="appendToDisplay('l')">l</button>
+            </div>
+            <div class="first-row">
+                <button class="uppercase" onclick="caps()"><i
+                        class="fa-solid fa-up-long"></i></button>
+                <button class="a" onclick="appendToDisplay('z')">z</button>
+                <button class="a" onclick="appendToDisplay('x')">x</button>
+                <button class="a" onclick="appendToDisplay('c')">c</button>
+                <button class="a" onclick="appendToDisplay('v')">v</button>
+                <button class="a" onclick="appendToDisplay('b')">b</button>
+                <button class="a" onclick="appendToDisplay('n')">n</button>
+                <button class="a" onclick="appendToDisplay('m')">m</button>
+                <button class="backspace" onclick="del()"><i class="fa-solid fa-delete-left"></i></button>
+            </div>
+            <div class="first-row">
+                <button class="number" onclick="NUM()">?123</button>
+                <button onclick="appendToDisplay(',')"><b>,</b></button>
+                <button onclick="emoji()"><i class="fa-solid fa-face-smile"></i></button>
+                <button class="space-bar" onclick="appendToDisplay(' ')">search</button>
+                <button onclick="appendToDisplay('.')"><b>.</b></button>
+                <button class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+<!-- ----------------emojis---------------- -->
+
+            <div class="e-row">
+                <button class="search" onclick="back_to_keys()"><i class="fa-solid fa-arrow-left"></i></button>
+                <div class="heading"><h2>Emojis</h2></div>
+            </div>
+
+            <div class="e-row">
+                <button class="e" onclick="appendToDisplay('&#128512;')">&#128512;</button>
+                <button class="e" onclick="appendToDisplay('&#128513;')">&#128513;</button>
+                <button class="e" onclick="appendToDisplay('&#128514;')">&#128514;</button>
+                <button class="e" onclick="appendToDisplay('&#128515;')">&#128515;</button>
+                <button class="e" onclick="appendToDisplay('&#128516;')">&#128516;</button>
+                <button class="e" onclick="appendToDisplay('&#128517;')">&#128517;</button>
+            </div>
+
+            <div class="e-row">
+                <button class="e" onclick="appendToDisplay('&#128518;')">&#128518;</button>
+                <button class="e" onclick="appendToDisplay('&#128519;')">&#128519;</button>
+                <button class="e" onclick="appendToDisplay('&#128520;')">&#128520;</button>
+                <button class="e" onclick="appendToDisplay('&#128521;')">&#128521;</button>
+                <button class="e" onclick="appendToDisplay('&#128522;')">&#128522;</button>
+                <button class="e" onclick="appendToDisplay('&#128523;')">&#128523;</button>
+            </div>
+
+            <div class="e-row">
+                <button class="e" onclick="appendToDisplay('&#128524;')">&#128524;</button>
+                <button class="e" onclick="appendToDisplay('&#128525;')">&#128525;</button>
+                <button class="e" onclick="appendToDisplay('&#128526;')">&#128526;</button>
+                <button class="e" onclick="appendToDisplay('&#128527;')">&#128527;</button>
+                <button class="e" onclick="appendToDisplay('&#128528;')">&#128528;</button>
+                <button class="e" onclick="appendToDisplay('&#128529;')">&#128529;</button>
+            </div>
+
+<!-- ------------------numbers------------------- -->
+            <div class="numbers">
+                <button class="a" onclick="appendToDisplay('1')">1</button>
+                <button class="a" onclick="appendToDisplay('2')">2</button>
+                <button class="a" onclick="appendToDisplay('3')">3</button>
+                <button class="a" onclick="appendToDisplay('4')">4</button>
+                <button class="a" onclick="appendToDisplay('5')">5</button>
+                <button class="a" onclick="appendToDisplay('6')">6</button>
+                <button class="a" onclick="appendToDisplay('7')">7</button>
+                <button class="a" onclick="appendToDisplay('8')">8</button>
+                <button class="a" onclick="appendToDisplay('9')">9</button>
+                <button class="a" onclick="appendToDisplay('0')">0</button>
+            </div>
+            <div class="numbers">
+                <button class="a" onclick="appendToDisplay('@')">@</button>
+                <button class="a" onclick="appendToDisplay('#')">#</button>
+                <button class="a" onclick="appendToDisplay('$')">$</button>
+                <button class="a" onclick="appendToDisplay('_')">_</button>
+                <button class="a" onclick="appendToDisplay('&')">&</button>
+                <button class="a" onclick="appendToDisplay('-')">-</button>
+                <button class="a" onclick="appendToDisplay('+')">+</button>
+                <button class="a" onclick="appendToDisplay('&#40;')">&#40;</button>
+                <button class="a" onclick="appendToDisplay('&#41;')">&#41;</button>
+                <button class="a" onclick="appendToDisplay('/')">/</button>
+
+            </div>
+            <div class="numbers">
+                <button class="uppercase" onclick="appendToDisplay('   ')">Tab</button>
+                <button class="a" onclick="appendToDisplay('*')">*</button>
+                <button class="a" onclick="appendToDisplay('&quot;')">&quot;</button>
+                <button class="a" onclick="appendToDisplay('&apos;')">&apos;</button>
+                <button class="a" onclick="appendToDisplay(':')">:</button>
+                <button class="a" onclick="appendToDisplay(';')">;</button>
+                <button class="a" onclick="appendToDisplay('!')">!</button>
+                <button class="a" onclick="appendToDisplay('?')">?</button>
+                <button class="backspace" onclick="del()"><i class="fa-solid fa-delete-left"></i></button>
+            </div>
+            <div class="numbers">
+                <button class="number" onclick="ABC()">ABC</button>
+                <button onclick="appendToDisplay(',')"><b>,</b></button>
+                <button onclick="emoji()"><i class="fa-solid fa-face-smile"></i></button>
+                <button class="space-bar" onclick="appendToDisplay(' ')">search</button>
+                <button onclick="appendToDisplay('.')"><b>.</b></button>
+                <button class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="keyboard.js"></script>
+</body>
+
+</html>
